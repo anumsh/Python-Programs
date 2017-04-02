@@ -1,11 +1,13 @@
-def primeNumber(n):
-  for i in range(1,(n+1)):
-    flag=0;
-    for j in range(2,i):
-      if(i%j == 0):
-        flag=1;
-        break;
-    if (flag==0):
-      print i
-  
-print primeNumber(10)
+def primeNumber(lower,upper):
+  for num in range(lower,upper + 1):
+   isprime=True
+   if num >1:
+       for checkprime in range(2,num/2):
+           if (num % checkprime) == 0:
+             isprime = False
+             break
+       if(isprime):
+           print (num)
+  return
+           
+primeNumber(30,80)
