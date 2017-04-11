@@ -1,26 +1,32 @@
-def is_anagram(s1, s2):
-    s1 = list(s1)
-    print s1
-    s2 = list(s2)
-    print s2
-    s1.sort()
-    print s1
-    s2.sort()
-    print s2
-    return s1 == s2
+def anagram(s, t):
+    string = len(s)
+    substring = len(t)
+    # edge conditions
+    if substring == 0:
+        return True
+    if substring > string:
+        return False
+    # store substring in dictionary diction
+    substringdiction = dict()
+    for c in t:
+        substringdiction[c] = substringdiction.get(c, 0) + 1
 
-def anagram_finder(s, t):
-    match_length = len(t)
-    print "match  string length",match_length
-    pattern_length = len(s)
-    print "string length", pattern_length
-    for i in range(pattern_length - match_length + 1):
-        print i
-        print s[i: i+match_length]
-        print t
-        if is_anagram(s[i: i+match_length], t):
+    # loop s
+    for i in range(string):
+        stringdiction = {}
+        for j in range(i, i + substring):
+            # this substring !=substringdiction case, break
+            if s[j] not in substringdiction:
+                break
+            # store each substring in dictionary stringdiction
+            else:
+                stringdiction[s[j]] = stringdiction.get(s[j], 0) + 1
+        # stringdiction==substringdiction means one anagram of t is the substring of s, return True
+        if stringdiction == substringdiction:
             return True
+    # not found stringdiction=substringdiction in the loop
     return False
 
-print is_anagram("urhget", "teghur")
-print anagram_finder("udacity","adc")
+print anagram("udacity","ty")
+print anagram("udacity"," ")
+print anagram("udacity","mnbgfdfdsfsdfgsgdfg12121")
