@@ -17,7 +17,7 @@ Then, the output should be:
 
 netAmount = 0
 while True:
-    s = raw_input()
+    s = raw_input("enter the operation and then amount")
     if not s:
         break
     values = s.split(" ")
@@ -28,5 +28,5 @@ while True:
     elif operation=="W":
         netAmount-=amount
     else:
-        print(" no output")
+        pass
 print netAmount
