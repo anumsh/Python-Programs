@@ -23,7 +23,7 @@ def stringFormat(pet_list):
            string_formatted_list = [] # empty list
            for pet  in pet_list:
                       result = "The "+ pet.species + " says "+ pet.noise
-                      string_formatted_list.append(result) # appending the values in newstringlist
+                      string_formatted_list.append(result) # appending the values in string_formatted_list
            return (list(set(string_formatted_list)))
 
 """ Pet objects/instances"""
@@ -33,6 +33,6 @@ jorge=Pet("jorge","dog",2.00,"yip")
 
 pet_list=[spot,fido,jorge]
 
-print spot.speak()   # woof
+print (spot.speak())   # woof
 print (sumOfFoodCost(pet_list)) # 14.0
 print (stringFormat(pet_list)) # ['The dog says yip', 'The dog says woof']
