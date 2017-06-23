@@ -23,25 +23,24 @@ value = []
 items=[x for x in raw_input("enter the password ").split(',')]
 print items
 for p in items:
-    if len(p)<6 or len(p)>12:
-               print "length"
+     print "length is ",len(p)
+     if len(p)<6 or len(p)>12:
                continue
-    else:
-        pass
-    if not re.search("[a-z]",p):
-        continue
-    elif not re.search("[0-9]",p):
-        continue
-    elif not re.search("[A-Z]",p):
-        continue
-    elif not re.search("[$#@]",p):
-        continue
-    elif re.search("\s",p):
-        continue
-    else:
-        pass
-    value.append(p)
-print ",".join(value)
+     if not re.search("[a-z]",p):
+                print " a-z characters  not in the password"
+                continue
+     elif not re.search("[0-9]",p):
+                print "0-9 letters are not in password"
+                continue
+     elif not re.search("[A-Z]",p):
+                print "A-Z alphabets are not in password"
+                continue
+     elif not re.search("[$#@]",p):
+                print "symbols are not in password"
+                continue
+     else:
+               value.append(p)
+print " , ".join(value)
 
 """
 output:
