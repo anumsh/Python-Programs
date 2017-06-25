@@ -13,8 +13,10 @@ print borderPattern(5)
 output:
 
 *****
-*   *
-*   *
-*   *
+*      *
+*      *
+*      *
 *****
+
+
 """
