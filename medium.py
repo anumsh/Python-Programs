@@ -1,10 +1,10 @@
-def bigger(a,b):
+def bigger(a,b):  #Defining a function to identify the large value from given two values 
   if a>b:
     return a
   else:
     return b
 
-def biggest(a,b,c):
+def biggest(a,b,c):    
    return bigger(a,bigger(b,c))
 
 def medium(a,b,c):
