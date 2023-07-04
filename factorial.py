@@ -8,3 +8,14 @@ def factorial(n):
   
   
 print factorial(-6)
+
+#another way of find factorial
+
+def f(n):
+    fact=1
+    while n>1:
+        fact=fact*n
+        n=n-1
+    print( fact)
+
+f(5)
